@@ -1,0 +1,8 @@
+// Mixin for responsive
+@mixin res($px) {
+  @media all and (min-width: $px) {
+    @content;
+  }
+}
+
+$color: red;

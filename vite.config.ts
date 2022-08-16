@@ -15,6 +15,11 @@ export default defineConfig({
     svgr(),
     react(),
   ],
+  resolve: {
+    alias: {
+      styles: "./src/assets/styles",
+    },
+  },
   server: {
     hmr: {
       overlay: true,
