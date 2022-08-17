@@ -1,8 +1,32 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import jwt from "jsonwebtoken";
 
-const initialState = {
-  name: "",
-  access_token: "",
+export type UserInitState = {
+  accessToken: string;
+  isAuthenticated: boolean;
+  redirectCount: number;
+  roles: {
+    list: string[];
+    map: Record<string, unknown>;
+  };
+  permission: {
+    list: string[];
+    map: Record<string, unknown>;
+  };
+};
+
+const initialState: UserInitState = {
+  redirectCount: 0,
+  accessToken: "",
+  isAuthenticated: false,
+  roles: {
+    list: [],
+    map: {}, // redux does not accept non-serializable values
+  },
+  permission: {
+    list: [],
+    map: {},
+  },
 };
 
 export const userSlice = createSlice({
@@ -12,16 +36,24 @@ export const userSlice = createSlice({
     /**
      * Function to initialzate user token
      * @param state
-     * @param action
+     * @param action payload action token
      */
-    initToken: (state, action: PayloadAction<string>) => {
-      state.access_token = action.payload;
+    loginUser: (state, action: PayloadAction<string>) => {
+      const accessToken = action.payload;
+
+      const parsed = jwt.decode("accessToken");
+      debugger;
+
+      state.accessToken = accessToken;
+      state.isAuthenticated = true;
+      state.redirectCount++;
     },
-    updateName: (state, action: PayloadAction<string>) => {
-      state.name = action.payload;
+
+    logoutUser: () => {
+      return initialState;
     },
   },
 });
 
-export const { updateName } = userSlice.actions;
+export const { loginUser } = userSlice.actions;
 export default userSlice.reducer;

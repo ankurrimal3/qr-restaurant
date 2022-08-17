@@ -9,7 +9,7 @@ const http = axios.create({
 
 //get the access token set in reducer
 http.interceptors.request.use((_req: AxiosRequestConfig) => {
-  const { access_token } = store.getState().user;
+  const { accessToken: access_token } = store.getState().user;
   _req.headers = {
     ..._req.headers,
     Authorization: `Bearer ${access_token} `,
