@@ -1,7 +1,7 @@
 import MainLayout from "layouts/main-layout";
 import About from "modules/About";
 import Home from "modules/Home";
-import { RouteObject, Routes } from "react-router-dom";
+import { RouteObject } from "react-router-dom";
 import { routes } from "./route.enum";
 
 const mainLayoutRoute: RouteObject = {

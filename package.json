@@ -8,7 +8,9 @@
     "build": "tsc && vite build",
     "build:prod": "cp ./config/environment/.env.prod .env && yarn build",
     "build:stag": "cp ./config/environment/.env.stag .env && yarn build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix ."
   },
   "dependencies": {
     "@emotion/react": "^11.10.0",
@@ -35,12 +37,24 @@
     "@types/node": "^18.7.5",
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
+    "@typescript-eslint/eslint-plugin": "^5.33.1",
+    "@typescript-eslint/parser": "^5.33.1",
     "@vitejs/plugin-react": "^2.0.1",
+    "eslint": "^8.22.0",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-plugin-react": "^7.30.1",
+    "prettier": "^2.7.1",
     "sass": "^1.54.4",
     "typescript": "^4.6.4",
     "vite": "^3.0.7",
     "vite-plugin-pwa": "^0.12.3",
     "vite-plugin-svgr": "^2.2.1",
     "vite-tsconfig-paths": "^3.5.0"
+  },
+  "prettier": {
+    "semi": true,
+    "tabWidth": 2,
+    "trailingComma": "es5",
+    "singleQuote": false
   }
 }
