@@ -18,8 +18,10 @@ export default defineConfig({
   resolve: {
     alias: {
       styles: "./src/assets/styles",
+      buffer: "buffer",
     },
   },
+
   server: {
     port: 3000,
     hmr: {

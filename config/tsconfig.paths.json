@@ -21,7 +21,9 @@
       "styles": ["./assets/styles"],
       "styles/*": ["./assets/styles/*"],
       "modules": ["./modules"],
-      "modules/*": ["./modules/*"]
+      "modules/*": ["./modules/*"],
+      "components": ["./components"],
+      "components/*": ["./components/*"]
     }
   }
 }

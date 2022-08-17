@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import jwt from "jsonwebtoken";
+import jwt from "jwt-decode";
 
 export type UserInitState = {
   accessToken: string;
@@ -41,7 +41,7 @@ export const userSlice = createSlice({
     loginUser: (state, action: PayloadAction<string>) => {
       const accessToken = action.payload;
 
-      const parsed = jwt.decode("accessToken");
+      const parsed = jwt("accessToken");
       debugger;
 
       state.accessToken = accessToken;
