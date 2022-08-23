@@ -26,6 +26,8 @@ import { BiCog } from "react-icons/bi";
 //import sidebar css from react-pro-sidebar module and our custom css
 import "react-pro-sidebar/dist/css/styles.css";
 import "./styles.scss";
+import { Link } from "react-router-dom";
+import { routes } from "routes/route.enum";
 
 const Sidebar = () => {
   //create initial menuCollapse state using useState hook
@@ -59,16 +61,23 @@ const Sidebar = () => {
                 Home
               </MenuItem>
               <SubMenu title="Menu" icon={<FaGem />}>
-                <MenuItem>Component 1</MenuItem>
+                <MenuItem
+                // onClick={() => {
+                //   setMenuCollapse(true);
+                // }}
+                >
+                  Component 1
+                  <Link to={routes.MENU} />
+                </MenuItem>
                 <MenuItem>Component 1</MenuItem>
                 <MenuItem>Component 1</MenuItem>
                 <MenuItem>Component 1</MenuItem>
                 <MenuItem>Component 1</MenuItem>
               </SubMenu>
 
-              <MenuItem icon={<FaRegHeart />}>Favourite</MenuItem>
-              <MenuItem icon={<RiPencilLine />}>Author</MenuItem>
-              <MenuItem icon={<BiCog />}>Settings</MenuItem>
+              <MenuItem icon={<BiCog />}>
+                Settings <Link to={routes.SETTINGS} />
+              </MenuItem>
             </Menu>
           </SidebarContent>
 

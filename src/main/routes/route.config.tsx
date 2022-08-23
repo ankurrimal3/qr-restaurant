@@ -1,4 +1,6 @@
 import MainLayout from "layouts/main-layout";
+import Menu from "layouts/Menu/Menu";
+import Settings from "layouts/Settings/Settings";
 import About from "modules/About";
 import Home from "modules/Home";
 import { RouteObject } from "react-router-dom";
@@ -10,6 +12,8 @@ const mainLayoutRoute: RouteObject = {
   children: [
     { index: true, element: <Home /> },
     { path: routes.ABOUT, element: <About /> },
+    { path: routes.MENU, element: <Menu /> },
+    { path: routes.SETTINGS, element: <Settings /> },
   ],
 };
 

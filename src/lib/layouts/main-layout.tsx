@@ -4,8 +4,10 @@ import Sidebar from "./Sidebar/Sidebar";
 const MainLayout = () => {
   return (
     <>
-      <Sidebar />
-      {/* <Outlet /> */}
+      <div style={{ display: "flex", flexDirection: "row" }}>
+        <Sidebar />
+        {/* <Outlet /> */}
+      </div>
     </>
   );
 };
